@@ -1,14 +1,49 @@
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "../../../public/VEZ-logos_transparent.png";
+
+const menuItems = [
+  {
+    menu: "Home",
+    link: "/",
+  },
+  {
+    menu: "Agents",
+    link: "/agents",
+  },
+  {
+    menu: "Weapons",
+    link: "/weapons",
+  },
+  {
+    menu: "Maps",
+    link: "/maps",
+  },
+  {
+    menu: "Guides",
+    link: "/guides",
+  },
+];
 
 export default function Navbar() {
+  const displayMenu = () => {
+    return menuItems.map((item) => (
+      <Link
+        key={item.menu}
+        href={item.link}
+        className="hover:text-red-500 font-bold py-5 px-2 rounded mx-4"
+      >
+        {item.menu}
+      </Link>
+    ));
+  };
+
   return (
-    <div>
-      <nav>
-        <Link href="/">Home</Link>
-        <Link href="/agents">Agents</Link>
-        <Link href="/weapons">Weapons</Link>
-        <Link href="/guides">Guides</Link>
-      </nav>
-    </div>
+    <>
+      <div className="flex justify-center items-center">
+        <Image alt="Valo EZ Logo" src={Logo} width={50} height={50} />
+        <div className="flex justify-center ">{displayMenu()}</div>
+      </div>
+    </>
   );
 }
