@@ -1,7 +1,9 @@
 import Image from "next/image"
 
 type Weapons = {
-
+  uuid: string;
+  displayName: string;
+  displayIcon: string;
 };
 
 const getWeaponData = async () => {
@@ -15,7 +17,7 @@ export default async function Weapons() {
     <div>
       <h1>Weapons</h1>
       <ul>
-        {weapons.data.map((weapon) => (
+        {weapons.data.map((weapon: Weapons) => (
           <>
             <li>{weapon.displayName}</li>
             <Image 
