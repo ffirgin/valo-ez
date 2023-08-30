@@ -1,7 +1,9 @@
 import Image from "next/image"
 
 type Maps = {
-
+  uuid: string;
+  displayName: string;
+  listViewIcon: string;
 };
 
 const getMapData = async () => {
@@ -16,7 +18,7 @@ export default async function Maps() {
     <div>
       <h1>Maps</h1>
       <ul>
-        {maps.data.map((map) => (
+        {maps.data.map((map: Maps) => (
           <>
             <li>{map.displayName}</li>
             <Image 
