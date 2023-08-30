@@ -8,7 +8,7 @@ type Agent = {
   displayIconSmall: string;
   displayIcon: string;
   fullPortrait: string;
-}
+};
 
 const getAgentData = async () => {
   const res = await fetch("https://valorant-api.com/v1/agents");
