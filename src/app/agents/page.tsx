@@ -21,17 +21,19 @@ export default async function Agents() {
 
   return (
     <div>
-      <h1 className="text-center uppercase text-2xl font-bold pb-5">
-        Agents
-      </h1>
+      <h1 className="text-center uppercase text-2xl font-bold pb-5">Agents</h1>
       <div className="flex flex-wrap gap-4 justify-center items-center pb-5 ">
         {agents.data
           .filter((playable: Agent) => playable.isPlayableCharacter)
-          .sort((a: Agent,b: Agent) => a.displayName.localeCompare(b.displayName))
+          .sort((a: Agent, b: Agent) =>
+            a.displayName.localeCompare(b.displayName)
+          )
           .map((agent: Agent) => (
             <>
               <a
-                href={`/agent/${agent.displayName.toLowerCase()}`}
+                href={`/agent/${agent.displayName
+                  .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, "")
+                  .toLowerCase()}`}
                 className="flex flex-col max-w-[400px] items-center border-4 hover:border-indigo-500 transition hover:duration-300"
               >
                 <Image
