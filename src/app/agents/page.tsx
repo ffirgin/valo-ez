@@ -34,16 +34,16 @@ export default async function Agents() {
                 href={`/agent/${agent.displayName
                   .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, "")
                   .toLowerCase()}`}
-                className="flex flex-col max-w-[400px] items-center border-4 hover:border-indigo-500 transition hover:duration-300"
+                className="flex flex-col max-w-[400px] items-center border-4 hover:border-indigo-500 transition hover:ease-in-out hover:duration-200"
               >
                 <Image
                   src={agent.fullPortrait}
                   width={400}
                   height={400}
                   alt="Agent full portrait"
-                  style={{}}
+                  className="hover:transition hover:duration-200 hover:scale-105 hover:ease-in-out hover:translate-y-1"
                 />
-                <div className="flex gap-5">
+                <div className="flex gap-5 py-2 font-extrabold text-xl">
                   <p>{agent.displayName}</p>
                   <div className="flex gap-1 items-center">
                     <Image
