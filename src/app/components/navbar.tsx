@@ -31,7 +31,7 @@ export default function Navbar() {
       <Link
         key={item.menu}
         href={item.link}
-        className="hover:text-red-500 font-bold py-5 px-2 rounded mx-4"
+        className="hover:text-indigo-500 font-bold py-5 px-2 rounded mx-4"
       >
         {item.menu}
       </Link>
