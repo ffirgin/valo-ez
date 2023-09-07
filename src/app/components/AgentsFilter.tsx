@@ -1,4 +1,8 @@
-export const AgentsFilter = ({ setFilteredAgents }) => {
+type Props = {
+  setFilteredAgents: (e: any) => void;
+}
+
+const AgentsFilter: React.FC<Props> = ({ setFilteredAgents }) => {
   return (
     <div className="flex justify-center items-center gap-4">
       <button onClick={setFilteredAgents} value="All">
@@ -19,3 +23,5 @@ export const AgentsFilter = ({ setFilteredAgents }) => {
     </div>
   );
 };
+
+export default AgentsFilter;

@@ -1,19 +1,25 @@
 "use client";
-import { SetStateAction, useState } from "react";
-import { AgentsList } from "./AgentsList";
-import { AgentsFilter } from "./AgentsFilter";
 
-export const AgentsView = ({ agents }) => {
+import React, {  useState } from "react";
+import AgentsList  from "./AgentsList";
+import AgentsFilter  from "./AgentsFilter";
+
+import { Agent } from "../../types/Agents.type";
+
+
+const AgentsView: React.FC = () => {
   const [filteredAgents, setFilteredAgents] = useState("All");
-  const handleFilteredClick = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
+
+  const handleFilteredClick = (e: any) => {
     setFilteredAgents(e.target.value);
   };
+
   return (
     <>
       <AgentsFilter setFilteredAgents={handleFilteredClick} />
-      <AgentsList agents={agents} filteredAgents={filteredAgents} />
+      <AgentsList filteredAgents={filteredAgents} />
     </>
   );
 };
+
+export default AgentsView;

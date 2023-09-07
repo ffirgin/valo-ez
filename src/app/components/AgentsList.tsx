@@ -1,23 +1,30 @@
-import Image from "next/image";
-import { AgentBox } from "./AgentBox";
+'use-client'
+import { useContext, useEffect } from "react";
 
-type Agent = {
-  uuid: string;
-  displayName: string;
-  description: string;
-  isPlayableCharacter: boolean;
-  displayIconSmall: string;
-  displayIcon: string;
-  fullPortrait: string;
-  role: any;
-};
+import AgentBox from "./AgentBox";
+ 
+import { AgentsContext } from "../context/agents";
 
-export const AgentsList = ({ agents, filteredAgents }) => {
-  return (
+import { Agent } from "../../types/Agents.type";
+
+type Props = {
+  filteredAgents: string;
+}
+
+const AgentsList: React.FC<Props> = ({   filteredAgents }) => {
+  const { value, loading, updateContext } = useContext(AgentsContext);
+
+  useEffect(() => {
+    updateContext();
+  }, []);
+
+  if (loading) return <div>Loading...</div>
+
+  return ( 
     <div className="flex flex-wrap gap-4 justify-center items-center pb-5 ">
-      {agents.data
+      {value.data
         .filter((playable: Agent) => playable.isPlayableCharacter)
-        .filter((agent) => {
+        .filter((agent: Agent) => {
           if (filteredAgents === "All") return agent;
           return agent.role.displayName === filteredAgents;
         })
@@ -25,10 +32,10 @@ export const AgentsList = ({ agents, filteredAgents }) => {
           a.displayName.localeCompare(b.displayName)
         )
         .map((agent: Agent) => (
-          <>
-            <AgentBox agent={agent} />
-          </>
+          <AgentBox agent={agent} key={agent.uuid}/>
         ))}
     </div>
   );
 };
+
+export default AgentsList;
