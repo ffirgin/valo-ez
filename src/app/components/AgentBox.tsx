@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const AgentBox = ({ agent }) => {
   return (
-    <a
+    <Link
       href={`/agentData/agents/${agent.displayName
         .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, "")
         .toLowerCase()}`}
@@ -27,6 +28,6 @@ export const AgentBox = ({ agent }) => {
           <p>{agent.role.displayName}</p>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
