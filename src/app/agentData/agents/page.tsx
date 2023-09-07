@@ -1,29 +1,15 @@
-import Image from "next/image";
-import { AgentsView } from "../../components/AgentsView";
+'use client'
 
-type Agent = {
-  uuid: string;
-  displayName: string;
-  description: string;
-  isPlayableCharacter: boolean;
-  displayIconSmall: string;
-  displayIcon: string;
-  fullPortrait: string;
-  role: any;
-};
+import { useContext } from "react";
 
-const getAgentData = async () => {
-  const res = await fetch("https://valorant-api.com/v1/agents");
-  return res.json();
-};
+import AgentsView  from "../../components/AgentsView";
 
-export default async function Agents() {
-  const agents = await getAgentData();
-
+export default function Agents() {
+  
   return (
     <div>
       <h1 className="text-center uppercase text-2xl font-bold pb-5">Agents</h1>
-      <AgentsView agents={agents} />
+      <AgentsView />
     </div>
   );
 }

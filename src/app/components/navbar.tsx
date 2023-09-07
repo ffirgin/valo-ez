@@ -25,7 +25,7 @@ const menuItems = [
   },
 ];
 
-export default function Navbar() {
+const NavBar = () => {
   const displayMenu = () => {
     return menuItems.map((item) => (
       <Link
@@ -47,3 +47,5 @@ export default function Navbar() {
     </>
   );
 }
+
+export default NavBar;
