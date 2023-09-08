@@ -1,6 +1,8 @@
+import Image from "next/image";
+
 type Props = {
   setFilteredAgents: (e: any) => void;
-}
+};
 
 const AgentsFilter: React.FC<Props> = ({ setFilteredAgents }) => {
   return (
@@ -10,6 +12,12 @@ const AgentsFilter: React.FC<Props> = ({ setFilteredAgents }) => {
       </button>
       <button onClick={setFilteredAgents} value="Controller">
         Controller
+        <Image
+          src="/controller-icon.png"
+          alt="Controller Icon"
+          width={30}
+          height={30}
+        />
       </button>
       <button onClick={setFilteredAgents} value="Duelist">
         Duelist
