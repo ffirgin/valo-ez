@@ -18,10 +18,10 @@ const AgentsList: React.FC<Props> = ({   filteredAgents }) => {
     updateContext();
   }, []);
 
-  if (loading) return <div>Loading...</div>
+  if (loading) return <div className="min-h-screen">Loading...</div>
 
   return ( 
-    <div className="flex flex-wrap gap-4 justify-center items-center pb-5 ">
+    <div className="flex flex-wrap gap-4 justify-center items-center pb-5 min-h-screen ">
       {value.data
         .filter((playable: Agent) => playable.isPlayableCharacter)
         .filter((agent: Agent) => {
