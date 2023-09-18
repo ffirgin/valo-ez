@@ -2,7 +2,7 @@
 import { useContext, useEffect } from "react";
 
 import AgentBox from "./AgentBox";
- 
+
 import { AgentsContext } from "../context/agents";
 
 import { Agent } from "../../types/Agents.type";
