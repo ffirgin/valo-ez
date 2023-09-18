@@ -28,10 +28,8 @@ const AgentPage: React.FC<Props> = ({ agentId }) => {
       <div className="min-h-screen">
         <div>
           {agentData.map((agent: Agent) => (
-            <div key={agent.uuid} className="flex flex-col items-center ">
-              <h1 className="text-center uppercase text-3xl font-bold my-5">
-                {agent.displayName}
-              </h1>
+            <div key={agent.uuid} className="flex flex-col items-center">
+              <h1 className="font-bold text-2xl pb-5">{agent.displayName}</h1>
               <Image
                 src={agent.displayIcon}
                 width={100}
@@ -41,6 +39,7 @@ const AgentPage: React.FC<Props> = ({ agentId }) => {
               />
               <div>
                 <h2 className="text-center text-xl">Abilities</h2>
+
                 <div className="max-w-2xl md:flex-row  ">
                   {agent.abilities.map((abilities: Agent) => (
                     <div
@@ -56,10 +55,10 @@ const AgentPage: React.FC<Props> = ({ agentId }) => {
                           src={abilities.displayIcon}
                           width={50}
                           height={50}
-                          className="bg-indigo-400 w-[75px] object-scale-down my-2"
+                          className="bg-gray-400 w-[75px] object-scale-down mt-1"
                         />
                       )}
-                      <p className="mx-3 my-2">{abilities.description}</p>
+                      <p className="mt-1">{abilities.description}</p>
                     </div>
                   ))}
                 </div>
