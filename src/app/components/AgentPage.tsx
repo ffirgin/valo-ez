@@ -28,10 +28,8 @@ const AgentPage: React.FC<Props> = ({ agentId }) => {
       <div className="min-h-screen">
         <div>
           {agentData.map((agent: Agent) => (
-            <div key={agent.uuid} className="flex flex-col items-center ">
-              <h1 className="text-center uppercase text-3xl font-bold my-5">
-                {agent.displayName}
-              </h1>
+            <div key={agent.uuid} className="flex flex-col items-center">
+              <h1 className="font-bold text-2xl pb-5">{agent.displayName}</h1>
               <Image
                 src={agent.displayIcon}
                 width={100}
@@ -40,27 +38,21 @@ const AgentPage: React.FC<Props> = ({ agentId }) => {
                 className="mb-5"
               />
               <div>
-                {/* <h2 className="text-center mb-5">Abilities</h2> */}
-                <div className="flex flex-wrap justify-center gap-5 cursor-default">
+                <h2 className="text-center text-xl">Abilities</h2>
+                <div className="flex flex-col items-center text-center max-w-2xl">
                   {agent.abilities.map((abilities: Agent) => (
-                    <div
-                      className="flex flex-col items-center text-center w-[550px] bg-slate-300 border-4 rounded-xl border-indigo-200
-                      hover:border-indigo-500 hover:ease-in-out hover:duration-200"
-                      key={agent.uuid}
-                    >
-                      <h3 className="text-xl font-bold uppercase underline my-2">
-                        {abilities.displayName}
-                      </h3>{" "}
+                    <div className="flex flex-col items-center mb-4" key={agent.uuid}>
+                      <h3 className="underline mt-3">{abilities.displayName}</h3>{" "}
                       {abilities.displayIcon !== null && (
                         <Image
                           alt={`${agent.displayName}'s Ability Icon`}
                           src={abilities.displayIcon}
                           width={50}
                           height={50}
-                          className="bg-indigo-400 w-[75px] object-scale-down my-2"
+                          className="bg-gray-400 w-[75px] object-scale-down mt-1"
                         />
                       )}
-                      <p className="mx-3 my-2">{abilities.description}</p>
+                      <p className="mt-1">{abilities.description}</p>
                     </div>
                   ))}
                 </div>
