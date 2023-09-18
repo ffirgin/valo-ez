@@ -14,7 +14,8 @@ const AgentPage: React.FC<Props> = ({ agentId }) => {
   useEffect(() => {
     updateContext();
   }, []);
-  if (loading) return <div>Loading...</div>;
+  if (loading)
+    return <div className="text-center text-2xl font-bold">Loading...</div>;
 
   const agentData = value.data.filter((agent: Agent) => {
     if (agent.uuid === agentId) {
@@ -29,7 +30,9 @@ const AgentPage: React.FC<Props> = ({ agentId }) => {
         <div>
           {agentData.map((agent: Agent) => (
             <div key={agent.uuid} className="flex flex-col items-center">
-              <h1 className="font-bold text-2xl pb-5">{agent.displayName}</h1>
+              <h1 className="text-center uppercase text-2xl font-bold mb-3">
+                {agent.displayName}
+              </h1>
               <Image
                 src={agent.displayIcon}
                 width={100}
@@ -38,15 +41,14 @@ const AgentPage: React.FC<Props> = ({ agentId }) => {
                 className="mb-5"
               />
               <div>
-                <h2 className="text-center text-xl">Abilities</h2>
-
-                <div className="max-w-2xl md:flex-row  ">
+                <div className="flex flex-col flex-wrap gap-3 justify-center cursor-default md:flex-row mb-5">
                   {agent.abilities.map((abilities: Agent) => (
                     <div
-                      className="flex flex-col items-center mb-4 text-center md:flex-row bg-indigo-200 rounded"
+                      className="flex flex-col basis-1/3 gap-4 border-2 bg-indigo-100 rounded-2xl items-center text-center
+                      hover:border-indigo-500 hover:bg-indigo-200 transition hover:ease-in-out hover:duration-100"
                       key={agent.uuid}
                     >
-                      <h3 className="underline mt-3">
+                      <h3 className="underline mt-5 uppercase font-bold">
                         {abilities.displayName}
                       </h3>{" "}
                       {abilities.displayIcon !== null && (
@@ -55,10 +57,10 @@ const AgentPage: React.FC<Props> = ({ agentId }) => {
                           src={abilities.displayIcon}
                           width={50}
                           height={50}
-                          className="bg-gray-400 w-[75px] object-scale-down mt-1"
+                          className="bg-indigo-400 rounded-xl w-[75px] object-scale-down mt-1"
                         />
                       )}
-                      <p className="mt-1">{abilities.description}</p>
+                      <p className="mb-5 mx-4">{abilities.description}</p>
                     </div>
                   ))}
                 </div>
