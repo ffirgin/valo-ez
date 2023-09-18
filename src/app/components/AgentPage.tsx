@@ -39,10 +39,16 @@ const AgentPage: React.FC<Props> = ({ agentId }) => {
               />
               <div>
                 <h2 className="text-center text-xl">Abilities</h2>
-                <div className="flex flex-col items-center text-center max-w-2xl">
+
+                <div className="max-w-2xl md:flex-row  ">
                   {agent.abilities.map((abilities: Agent) => (
-                    <div className="flex flex-col items-center mb-4" key={agent.uuid}>
-                      <h3 className="underline mt-3">{abilities.displayName}</h3>{" "}
+                    <div
+                      className="flex flex-col items-center mb-4 text-center md:flex-row bg-indigo-200 rounded"
+                      key={agent.uuid}
+                    >
+                      <h3 className="underline mt-3">
+                        {abilities.displayName}
+                      </h3>{" "}
                       {abilities.displayIcon !== null && (
                         <Image
                           alt={`${agent.displayName}'s Ability Icon`}
