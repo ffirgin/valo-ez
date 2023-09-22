@@ -25,7 +25,6 @@ const AgentPage: React.FC<Props> = ({ agentId }) => {
 
   return (
     <>
-      {/* <div>Hello World {JSON.stringify(agentData)}</div> */}
       <div className="min-h-screen">
         <div>
           {agentData.map((agent: Agent) => (
