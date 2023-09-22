@@ -6,8 +6,11 @@ import AgentsFilter  from "./AgentsFilter";
 
 import { Agent } from "../../types/Agents.type";
 
+type Props = {
+  data: Agent[];
+}
 
-const AgentsView: React.FC = () => {
+const AgentsView: React.FC<Props> = ({ data }) => {
   const [filteredAgents, setFilteredAgents] = useState("All");
 
   const handleFilteredClick = (e: any) => {
@@ -17,7 +20,7 @@ const AgentsView: React.FC = () => {
   return (
     <>
       <AgentsFilter setFilteredAgents={handleFilteredClick} />
-      <AgentsList filteredAgents={filteredAgents} />
+      <AgentsList filteredAgents={filteredAgents} data={data}/>
     </>
   );
 };
