@@ -1,27 +1,18 @@
 "use client";
 
 import React, { useContext, useEffect } from "react";
-import { AgentsContext } from "../context/agents";
 import { Agent } from "../../types/Agents.type";
 import Image from "next/image";
 
 type Props = {
   agentId: string;
+  loading?: boolean;
 };
 
-const AgentPage: React.FC<Props> = ({ agentId }) => {
-  const { value, loading, updateContext } = useContext(AgentsContext);
-  useEffect(() => {
-    updateContext();
-  }, []);
+const AgentPage: React.FC<Props> = ({ agentId, loading = false }) => {
+
   if (loading)
     return <div className="text-center text-2xl font-bold">Loading...</div>;
-
-  const agentData = value.data.filter((agent: Agent) => {
-    if (agent.uuid === agentId) {
-      return agent;
-    }
-  });
 
   return (
     <>
