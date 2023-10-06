@@ -1,4 +1,4 @@
-import AgentsView  from "../../components/AgentsView";
+import AgentsView from "../components/AgentsView";
 
 const getAgentsData = async () => {
   const res = await fetch("https://valorant-api.com/v1/agents");
