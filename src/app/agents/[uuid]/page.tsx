@@ -1,5 +1,5 @@
 import React from "react";
-import AgentPage from "../../../components/AgentPage"
+import AgentPage from "../../components/AgentPage"
 
 type Props = {
   params: {
@@ -8,11 +8,11 @@ type Props = {
 }
 
 // Make individual Agent API call
-// const getAgentsData = async () => {
-//   const res = await fetch("https://valorant-api.com/v1/agents");
-//   const data = await res.json();
-//   return data;
-// };
+const getAgentsData = async () => {
+  const res = await fetch("https://valorant-api.com/v1/agents/");
+  const data = await res.json();
+  return data;
+};
 
 const Agent: React.FC<Props> = ({ params }) => {
   return (
