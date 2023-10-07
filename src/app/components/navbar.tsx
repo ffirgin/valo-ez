@@ -9,7 +9,7 @@ const menuItems = [
   },
   {
     menu: "Agents",
-    link: "/agentData/agents",
+    link: "/agents",
   },
   {
     menu: "Weapons",
