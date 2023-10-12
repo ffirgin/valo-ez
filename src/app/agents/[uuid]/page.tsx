@@ -1,23 +1,24 @@
-import React from "react";
-import AgentPage from "../../components/AgentPage"
+import AgentPage from "../../components/AgentPage";
 
 type Props = {
   params: {
     uuid: string;
-  }
-}
+  };
+};
 
-// Make individual Agent API call
-const getAgentsData = async () => {
-  const res = await fetch("https://valorant-api.com/v1/agents/");
+const getAgentData = async ({ uuid }: any) => {
+  const res = await fetch(`https://valorant-api.com/v1/agents/${uuid}`);
   const data = await res.json();
   return data;
 };
 
-const Agent: React.FC<Props> = ({ params }) => {
-  return (
-    <AgentPage agentId={params.uuid}/>
-  )
-}
+export default async function Agent({ params }: { params: { slug: string } }) {
+  const { uuid }: any = params;
+  const data = await getAgentData({ uuid });
 
-export default Agent;
+  return (
+    <div>
+      <AgentPage data={data} />
+    </div>
+  );
+}
