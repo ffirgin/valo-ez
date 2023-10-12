@@ -41,7 +41,6 @@ const NavBar = () => {
   return (
     <>
       <div className="flex justify-center items-center">
-        <Image alt="Valo EZ Logo" src={Logo} width={50} height={50} />
         <div className="flex justify-center ">{displayMenu()}</div>
       </div>
     </>
