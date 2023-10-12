@@ -1,14 +1,14 @@
 "use client";
 
-import React, {  useState } from "react";
-import AgentsList  from "./AgentsList";
-import AgentsFilter  from "./AgentsFilter";
+import React, { useState } from "react";
+import AgentsList from "./AgentsList";
+import AgentsFilter from "./AgentsFilter";
 
 import { Agent } from "../../types/Agents.type";
 
 type Props = {
   data: Agent[];
-}
+};
 
 const AgentsView: React.FC<Props> = ({ data }) => {
   const [filteredAgents, setFilteredAgents] = useState("All");
@@ -20,7 +20,7 @@ const AgentsView: React.FC<Props> = ({ data }) => {
   return (
     <>
       <AgentsFilter setFilteredAgents={handleFilteredClick} />
-      <AgentsList filteredAgents={filteredAgents} data={data}/>
+      <AgentsList filteredAgents={filteredAgents} data={data} />
     </>
   );
 };

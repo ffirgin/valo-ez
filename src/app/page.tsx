@@ -21,7 +21,6 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <div className="pt-5">Placeholder area for 3D Model</div>
     </main>
   );
 }

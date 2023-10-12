@@ -7,7 +7,11 @@ type Props = {
 const AgentsFilter: React.FC<Props> = ({ setFilteredAgents }) => {
   return (
     <div className="flex justify-center items-center gap-4 mb-5">
-      <button onClick={setFilteredAgents} value="All" className="hover:bg-indigo-300 rounded px-1">
+      <button
+        onClick={setFilteredAgents}
+        value="All"
+        className="hover:bg-indigo-300 rounded px-1"
+      >
         All
       </button>
       <button
