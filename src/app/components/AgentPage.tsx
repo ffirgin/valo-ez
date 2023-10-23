@@ -1,5 +1,6 @@
 import { Agent } from "../../types/Agents.type";
 import Image from "next/image";
+import Link from "next/dist/client/link";
 
 type Props = {
   loading?: boolean;
@@ -23,15 +24,18 @@ const AgentPage: React.FC<Props> = ({ data, loading = false }) => {
             width={100}
             height={100}
             alt={`${agent.displayName}'s Icon`}
-            className="mb-5"
+            className="mb-3"
           />
+          <Link className="group py-2 font-bold" href="#guides">
+            Guides ←
+          </Link>
           <p className="text-center mb-5 w-[700px]">{agent.description}</p>
           <div>
             <div className="flex flex-col flex-wrap gap-3 justify-center cursor-default md:flex-row mb-5">
               {agent.abilities.map((abilities: any) => (
                 <div
-                  className="flex flex-col basis-1/3 gap-4 border-2 bg-indigo-100 rounded-2xl items-center text-center
-                hover:border-indigo-500 hover:bg-indigo-200 transition hover:ease-in-out hover:duration-100"
+                  className="group flex flex-col basis-1/3 gap-4 border-2 bg-zinc-300 rounded-2xl items-center text-center
+                hover:border-black hover:bg-black hover:text-white transition hover:ease-in-out hover:duration-100"
                   key={abilities.slot}
                 >
                   <h3 className="underline mt-5 uppercase font-bold">
@@ -43,13 +47,16 @@ const AgentPage: React.FC<Props> = ({ data, loading = false }) => {
                       src={abilities.displayIcon}
                       width={50}
                       height={50}
-                      className="bg-indigo-400 rounded-xl w-[75px] object-scale-down mt-1"
+                      className="bg-zinc-500 group-hover:bg-black transition hover:ease-in-out hover:duration-100 rounded-xl w-[75px] object-scale-down mt-1"
                     />
                   )}
                   <p className="mb-5 mx-4">{abilities.description}</p>
                 </div>
               ))}
             </div>
+            <p className="text-center text-2xl pb-4" id="guides">
+              Agent specific guides coming soon...
+            </p>
           </div>
         </div>
       </div>

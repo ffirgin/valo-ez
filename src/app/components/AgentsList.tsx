@@ -20,7 +20,7 @@ const AgentsList: React.FC<Props> = ({
     );
 
   return (
-    <div className="flex flex-wrap gap-4 justify-center items-center pb-5 min-h-screen ">
+    <div className="flex flex-wrap gap-4 justify-center items-center pb-5 min-h-screen">
       {data
         .filter((playable: Agent) => playable.isPlayableCharacter)
         .filter((agent: Agent) => {

@@ -10,14 +10,14 @@ const AgentsFilter: React.FC<Props> = ({ setFilteredAgents }) => {
       <button
         onClick={setFilteredAgents}
         value="All"
-        className="hover:bg-indigo-300 rounded px-1"
+        className="hover:bg-black hover:text-white rounded px-1"
       >
         All
       </button>
       <button
         onClick={setFilteredAgents}
         value="Controller"
-        className="flex flex-row-reverse justify-center items-center gap-1 hover:bg-indigo-300 rounded px-1"
+        className="flex flex-row-reverse justify-center items-center gap-1 hover:bg-black hover:text-white rounded px-1"
       >
         Controller
         <Image
@@ -31,7 +31,7 @@ const AgentsFilter: React.FC<Props> = ({ setFilteredAgents }) => {
       <button
         onClick={setFilteredAgents}
         value="Duelist"
-        className="flex flex-row-reverse justify-center items-center gap-1 hover:bg-indigo-300 rounded px-1"
+        className="flex flex-row-reverse justify-center items-center gap-1 hover:bg-black hover:text-white rounded px-1"
       >
         Duelist
         <Image
@@ -45,7 +45,7 @@ const AgentsFilter: React.FC<Props> = ({ setFilteredAgents }) => {
       <button
         onClick={setFilteredAgents}
         value="Initiator"
-        className="flex flex-row-reverse justify-center items-center gap-1 hover:bg-indigo-300 rounded px-1"
+        className="flex flex-row-reverse justify-center items-center gap-1 hover:bg-black hover:text-white rounded px-1"
       >
         Initiator
         <Image
@@ -59,7 +59,7 @@ const AgentsFilter: React.FC<Props> = ({ setFilteredAgents }) => {
       <button
         onClick={setFilteredAgents}
         value="Sentinel"
-        className="flex flex-row-reverse justify-center items-center gap-1 hover:bg-indigo-300 rounded px-1"
+        className="flex flex-row-reverse justify-center items-center gap-1 hover:bg-black hover:text-white rounded px-1"
       >
         Sentinel
         <Image
