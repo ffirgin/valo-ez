@@ -31,7 +31,7 @@ const NavBar = () => {
       <Link
         key={item.menu}
         href={item.link}
-        className="hover:text-indigo-500 font-bold py-5 px-2 rounded mx-4"
+        className="hover:text-white hover:drop-shadow font-bold py-5 px-2 rounded mx-4"
       >
         {item.menu}
       </Link>

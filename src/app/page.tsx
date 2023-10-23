@@ -13,8 +13,8 @@ export default function Home() {
           about the agents, weapons and maps of the game! Guides coming soon...
         </p>
         <div className="flex pt-3 items-center">
-          <button className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-3 rounded mx-4">
-            Get Started
+          <button className="bg-slate-500 hover:bg-black text-white font-bold py-2 px-3 rounded mx-4">
+            Get Learning
           </button>
           <a href="/about">
             Learn more <span className="hover:translate-x-1 ease-in-out duration-200">→</span>
