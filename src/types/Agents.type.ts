@@ -7,8 +7,10 @@ export type Agent = {
   displayIcon: string;
   fullPortrait: string;
   role: any;
+  data: string;
   abilities: {
     description: string
     map: Function;
+    
   }
 };
