@@ -26,8 +26,11 @@ const AgentPage: React.FC<Props> = ({ data, loading = false }) => {
             alt={`${agent.displayName}'s Icon`}
             className="mb-3"
           />
-          <Link className="group py-2 font-bold" href="#guides">
-            Guides ←
+          <Link
+            className="group py-1 px-1 font-bold border border-black rounded hover:bg-black hover:text-white"
+            href="#guides"
+          >
+            Guides
           </Link>
           <p className="text-center mb-5 w-[700px]">{agent.description}</p>
           <div>
