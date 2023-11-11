@@ -5,4 +5,5 @@ export type Maps = {
   splash: string;
   map: string;
   xMultiplier: number;
+  tacticalDescription: string;
 };

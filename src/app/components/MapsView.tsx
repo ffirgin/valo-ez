@@ -2,24 +2,15 @@
 
 import React, { useState } from "react";
 import MapsList from "./MapsList";
-// import MapsFilter from "./MapsFilter";
+import { Maps } from "@/types/Maps.type";
 
-// Types import if needed
+type Props = {
+  data: Maps[];
+};
 
-// type Props = {
-//   data: Map[];
-// };
-
-const MapsView = ({ data }) => {
-  // const [filteredMaps, setFilteredMaps] = useState("All");
-
-  // const handleFilteredClick = (e: any) => {
-  //   setFilteredMaps(e.target.value);
-  // };
-
+const MapsView: React.FC<Props> = ({ data }) => {
   return (
     <>
-      {/* <MapsFilter setFilteredMaps={handleFilteredClick} /> */}
       <MapsList data={data} />
     </>
   );
