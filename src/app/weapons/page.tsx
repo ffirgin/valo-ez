@@ -1,4 +1,5 @@
-import Image from "next/image"
+import Image from "next/image";
+import WeaponsView from "../components/WeaponsView";
 
 type Weapons = {
   uuid: string;
@@ -7,28 +8,16 @@ type Weapons = {
 };
 
 const getWeaponData = async () => {
-  const res = await fetch("https://valorant-api.com/v1/weapons")
+  const res = await fetch("https://valorant-api.com/v1/weapons");
   return res.json();
-}
+};
 
 export default async function Weapons() {
-  const weapons = await getWeaponData();
+  const data = await getWeaponData();
   return (
-    <div>
-      <h1>Weapons</h1>
-      <ul>
-        {weapons.data.map((weapon: Weapons) => (
-          <>
-            <li>{weapon.displayName}</li>
-            <Image 
-              src={weapon.displayIcon}
-              width={200}
-              height={200}
-              alt={weapon.displayName}
-            />
-          </>
-        ))}
-      </ul>
+    <div className="min-h-screen">
+      <h1 className="text-center uppercase text-2xl font-bold pb-5">Weapons</h1>
+      <WeaponsView data={data.data} />
     </div>
-  )
+  );
 }
