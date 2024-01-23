@@ -12,10 +12,6 @@ const menuItems = [
     link: "/agents",
   },
   {
-    menu: "Weapons",
-    link: "/weapons",
-  },
-  {
     menu: "Maps",
     link: "/maps",
   },
