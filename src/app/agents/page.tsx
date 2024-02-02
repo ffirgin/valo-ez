@@ -11,7 +11,7 @@ export default async function Agents() {
 
 
   return (
-    <div>
+    <div className="bg-white text-black">
       <h1 className="text-center uppercase text-2xl font-bold pb-5">Agents</h1>
       <AgentsView data={data.data} />
     </div>

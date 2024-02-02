@@ -36,7 +36,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center">
+      <div className="bg-white text-black flex justify-center items-center">
         <div className="flex justify-center ">{displayMenu()}</div>
       </div>
     </>
