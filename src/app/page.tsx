@@ -6,7 +6,7 @@ export default function Home() {
       <div className="flex flex-col items-center cursor-default">
         <h1 className="text-5xl font-extrabold text-center">
           {" "}
-          Valorant information, made EZ! 🤓{" "}
+          Valorant, made EZ! 🤓{" "}
         </h1>
         <p className="pt-5 text-center">
           Use information straight from the Valorant game files to learn more
