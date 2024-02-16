@@ -46,12 +46,20 @@ const NavBar = () => {
           {isLoaded && user ? (
             <UserButton afterSignOutUrl="/" />
           ) : (
-            <Link
-              className="hover:text-slate-500 hover:drop-shadow font-bold py-5 px-2 rounded mx-4"
-              href="/login"
-            >
-              Log in
-            </Link>
+            <div>
+              <Link
+                className="hover:text-slate-500 hover:drop-shadow font-bold py-5 px-2 rounded mx-4"
+                href="/signup"
+              >
+                Sign Up
+              </Link>
+              <Link
+                className="hover:text-slate-500 hover:drop-shadow font-bold py-5 px-2 rounded mx-4"
+                href="/login"
+              >
+                Log in
+              </Link>
+            </div>
           )}
         </div>
       </div>
