@@ -40,11 +40,19 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="flex justify-between bg-white text-black">
+      <div className="flex justify-between">
         <div className="ml-4 mt-4">{displayMenu()}</div>
         <div className="mr-4 mt-4">
           {isLoaded && user ? (
-            <UserButton afterSignOutUrl="/" />
+            <div className="flex gap-4">
+              <Link
+                className="hover:text-slate-500 hover:drop-shadow font-bold items-center justify-center"
+                href="/userprofile"
+              >
+                Profile
+              </Link>
+              <UserButton afterSignOutUrl="/" />
+            </div>
           ) : (
             <div>
               <Link
