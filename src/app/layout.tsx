@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
 import NavBar from "./components/navbar";
 import { ClerkProvider } from "@clerk/nextjs";
+import Footer from "./components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ subsets: ["latin"], weight: "600" });
@@ -25,6 +26,7 @@ export default function RootLayout({
           <div className="bg-white text-black">
             <NavBar />
             {children}
+            <Footer />
           </div>
         </body>
       </html>

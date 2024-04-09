@@ -18,10 +18,15 @@ const menuItems = [
     menu: "Maps",
     link: "/maps",
   },
-  {
-    menu: "Guides",
-    link: "/guides",
-  },
+  // Still working on these areas
+  // {
+  //   menu: "Weapons",
+  //   link: "/weapons",
+  // },
+  // {
+  //   menu: "Guides",
+  //   link: "/guides",
+  // },
 ];
 
 const NavBar = () => {
