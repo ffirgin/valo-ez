@@ -6,6 +6,7 @@ export type Agent = {
   displayIconSmall: string;
   displayIcon: string;
   fullPortrait: string;
+  background: string;
   role: any;
   data: string;
   abilities: {
