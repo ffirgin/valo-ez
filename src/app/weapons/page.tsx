@@ -1,12 +1,6 @@
 import Image from "next/image";
 import WeaponsView from "../components/WeaponsView";
 
-type Weapons = {
-  uuid: string;
-  displayName: string;
-  displayIcon: string;
-};
-
 const getWeaponData = async () => {
   const res = await fetch("https://valorant-api.com/v1/weapons");
   return res.json();

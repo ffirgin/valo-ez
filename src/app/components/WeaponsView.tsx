@@ -2,11 +2,10 @@
 
 import React, { useState } from "react";
 import WeaponsList from "./WeaponsList";
-// Type import
+import { Weapon } from "@/types/Weapons.type";
 
 type Props = {
-  data: string;
-  // REPLACE THE STRING WITH Weapons[];
+  data: Weapon[];
 };
 
 const WeaponsView: React.FC<Props> = ({ data }) => {
