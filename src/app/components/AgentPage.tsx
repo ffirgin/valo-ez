@@ -4,7 +4,9 @@ import Link from "next/dist/client/link";
 
 type Props = {
   loading?: boolean;
-  data: Agent[];
+  data: {
+    data: Agent;
+  }
 };
 
 const AgentPage: React.FC<Props> = ({ data, loading = false }) => {
