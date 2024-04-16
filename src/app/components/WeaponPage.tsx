@@ -1,13 +1,15 @@
 "use client";
 import Image from "next/image";
-// type import
+import { Weapon } from "@/types/Weapons.type";
 import { useState } from "react";
 import Link from "next/link";
 import credits from "../../../public/Credits_icon.webp";
 
 type Props = {
   loading?: boolean;
-  // data: Weapons[];
+  data:{
+    data: Weapon;
+  };
 };
 
 const WeaponPage: React.FC<Props> = ({ data, loading = false }) => {

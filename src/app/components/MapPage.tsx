@@ -6,7 +6,9 @@ import Link from "next/link";
 
 type Props = {
   loading?: boolean;
-  data: Maps[];
+  data: {
+    data: Maps;
+  };
 };
 
 function getSitesCount(data: Maps) {
