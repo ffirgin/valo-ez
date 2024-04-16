@@ -2,7 +2,6 @@ import WeaponBox from "./WeaponBox";
 import { Weapon } from "@/types/Weapons.type";
 
 type Props = {
-  filteredWeapons: string;
   loading?: boolean;
   data: Weapon[];
 };
