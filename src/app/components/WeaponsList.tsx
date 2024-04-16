@@ -1,9 +1,10 @@
 import WeaponBox from "./WeaponBox";
-// Type import
+import { Weapon } from "@/types/Weapons.type";
 
 type Props = {
   filteredWeapons: string;
   loading?: boolean;
+  data: Weapon[];
 };
 
 const WeaponsList: React.FC<Props> = ({ data, loading = false }) => {
