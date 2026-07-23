@@ -13,6 +13,17 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        valorant: {
+          red: '#FF4655',
+          'red-dark': '#BD3944',
+          ink: '#0F1923',
+          panel: '#1B2530',
+          line: '#2C3640',
+          white: '#ECE8E1',
+          grey: '#768079',
+        },
+      },
     },
   },
   plugins: [],

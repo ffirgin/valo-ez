@@ -1,20 +1,14 @@
+import { notFound } from "next/navigation";
 import MapPage from "@/app/components/MapPage";
+import { getMap } from "@/lib/valorant-api";
 
-// Types
+export default async function Map({ params }: { params: { uuid: string } }) {
+  const map = await getMap(params.uuid).catch(() => null);
+  if (!map) notFound();
 
-const getMapData = async ({ uuid }: any) => {
-  const res = await fetch(`https://valorant-api.com/v1/maps/${uuid}`);
-  const data = await res.json();
-  return data;
-};
-
-export default async function Map({ params }: { params: { slug: string } }) {
-  const { uuid }: any = params;
-  const data = await getMapData({ uuid });
-
-  return(
+  return (
     <div>
-      <MapPage data={data}/>
+      <MapPage map={map} />
     </div>
-  )
+  );
 }

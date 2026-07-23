@@ -1,20 +1,14 @@
+import { notFound } from "next/navigation";
 import WeaponPage from "@/app/components/WeaponPage";
+import { getWeapon } from "@/lib/valorant-api";
 
-// Types
+export default async function Weapon({ params }: { params: { uuid: string } }) {
+  const weapon = await getWeapon(params.uuid).catch(() => null);
+  if (!weapon) notFound();
 
-const getWeaponData = async ({ uuid }: any) => {
-  const res = await fetch(`https://valorant-api.com/v1/weapons/${uuid}`);
-  const data = await res.json();
-  return data;
-};
-
-export default async function Weapon({ params }: { params: { slug: string} }) {
-  const { uuid }: any = params;
-  const data = await getWeaponData({ uuid });
-
-  return(
+  return (
     <div>
-      <WeaponPage data={data}/>
+      <WeaponPage weapon={weapon} />
     </div>
-  )
+  );
 }

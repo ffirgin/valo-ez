@@ -1,9 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { SignIn, UserButton, useUser } from "@clerk/nextjs";
-import Image from "next/image";
-import Logo from "../../../public/VEZ-logos_transparent.png";
 
 const menuItems = [
   {
@@ -30,53 +25,20 @@ const menuItems = [
 ];
 
 const NavBar = () => {
-  const { user, isLoaded } = useUser();
-  const displayMenu = () => {
-    return menuItems.map((item) => (
-      <Link
-        key={item.menu}
-        href={item.link}
-        className="hover:text-slate-500 hover:drop-shadow font-bold py-5 px-2 rounded mx-4"
-      >
-        {item.menu}
-      </Link>
-    ));
-  };
-
   return (
-    <>
-      <div className="flex justify-between">
-        <div className="ml-4 mt-4">{displayMenu()}</div>
-        <div className="mr-4 mt-4">
-          {isLoaded && user ? (
-            <div className="flex gap-4">
-              <Link
-                className="hover:text-slate-500 hover:drop-shadow font-bold items-center justify-center"
-                href="/userprofile"
-              >
-                Profile
-              </Link>
-              <UserButton afterSignOutUrl="/" />
-            </div>
-          ) : (
-            <div>
-              <Link
-                className="hover:text-slate-500 hover:drop-shadow font-bold py-5 px-2 rounded mx-4"
-                href="/signup"
-              >
-                Sign Up
-              </Link>
-              <Link
-                className="hover:text-slate-500 hover:drop-shadow font-bold py-5 px-2 rounded mx-4"
-                href="/login"
-              >
-                Log in
-              </Link>
-            </div>
-          )}
-        </div>
+    <div className="flex justify-between border-b border-valorant-line bg-valorant-ink/80 backdrop-blur">
+      <div className="ml-4">
+        {menuItems.map((item) => (
+          <Link
+            key={item.menu}
+            href={item.link}
+            className="inline-block font-bold uppercase tracking-wide py-5 px-2 mx-4 text-valorant-white transition hover:text-valorant-red"
+          >
+            {item.menu}
+          </Link>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 

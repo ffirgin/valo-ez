@@ -1,20 +1,13 @@
 import AgentsView from "../components/AgentsView";
-
-const getAgentsData = async () => {
-  const res = await fetch("https://valorant-api.com/v1/agents", {
-    cache: "no-store",
-  });
-  const data = await res.json();
-  return data;
-};
+import { getAgents } from "@/lib/valorant-api";
 
 export default async function Agents() {
-  const data = await getAgentsData();
+  const agents = await getAgents();
 
   return (
-    <div className="">
-      <h1 className="text-center uppercase text-2xl font-bold pb-5">Agents</h1>
-      <AgentsView data={data.data} />
+    <div>
+      <h1 className="text-center uppercase text-2xl font-bold py-5">Agents</h1>
+      <AgentsView data={agents} />
     </div>
   );
 }

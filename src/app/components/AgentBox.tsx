@@ -14,56 +14,48 @@ const AgentBox: React.FC<Props> = ({ agent }) => {
       href={{
         pathname: `/agents/${agent.uuid}`,
       }}
-      className="flex flex-col max-w-[400px] items-center border-zinc-400  rounded-3xl hover:bg-black hover:border-none transition hover:ease-in-out hover:duration-200 z-20 overflow-hidden"
+      className="group relative flex flex-col w-64 aspect-[3/4] overflow-hidden border border-valorant-line bg-valorant-ink transition hover:border-valorant-red hover:duration-200"
     >
-      <div className="relative">
-        <motion.div
-          className="z-10 relative"
-          whileHover={{
-            scale: 1.2,
-          }}
-        >
+      <div className="pointer-events-none absolute inset-0 flex select-none flex-col items-center justify-center overflow-hidden">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <p
+            key={i}
+            className="whitespace-nowrap text-4xl font-black uppercase leading-[0.85] tracking-tight text-valorant-grey/20"
+          >
+            {agent.displayName}
+          </p>
+        ))}
+      </div>
+
+      <div className="absolute inset-x-0 bottom-0 top-4">
+        <motion.div className="relative h-full w-full" whileHover={{ scale: 1.05 }}>
           <Image
             src={agent.fullPortrait}
-            width={400}
-            height={400}
             alt={`${agent.displayName} full portrait`}
-            className="hover:transition hover:duration-300 hover:ease-in-out"
+            fill
+            sizes="256px"
+            className="object-contain object-bottom drop-shadow-[0_10px_15px_rgba(0,0,0,0.5)]"
           />
         </motion.div>
+      </div>
+
+      <div className="absolute top-3 right-3 z-10 flex items-center gap-1 rounded-full border border-valorant-line bg-valorant-ink/70 p-1.5 backdrop-blur">
         <Image
-          src={agent.background}
-          width={400}
-          height={400}
-          alt={`${agent.displayName} background`}
-          className="absolute bottom-0 translate-y-[140px] z-0"
+          src={agent.role.displayIcon}
+          width={16}
+          height={16}
+          alt={`${agent.role.displayName} icon`}
         />
       </div>
-      <motion.div
-        className="z-20"
-        initial={{
-          opacity: 0,
-          y: 100,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-      >
-        <div className="flex gap-5 py-2 font-extrabold text-xl text-white bg-black rounded-t px-3 h-10 items-center z-20">
-          <p>{agent.displayName}</p>
-          <div className="flex gap-1 items-center">
-            <Image
-              src={agent.role.displayIcon}
-              width={20}
-              height={20}
-              alt={`${agent.role.displayName} icon`}
-            />
-            <p>{agent.role.displayName}</p>
-          </div>
-        </div>
-      </motion.div>
+
+      <div className="relative z-10 mt-auto px-4 pb-3">
+        <p className="text-lg font-extrabold uppercase tracking-wide text-valorant-white">
+          {agent.displayName}
+        </p>
+        <p className="text-xs uppercase tracking-wider text-valorant-grey">
+          {agent.role.displayName}
+        </p>
+      </div>
     </Link>
   );
 };

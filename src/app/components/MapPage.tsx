@@ -6,9 +6,7 @@ import Link from "next/link";
 
 type Props = {
   loading?: boolean;
-  data: {
-    data: Maps;
-  };
+  map: Maps;
 };
 
 function getSitesCount(data: Maps) {
@@ -25,13 +23,12 @@ function getSitesCount(data: Maps) {
   }
 }
 
-const MapPage: React.FC<Props> = ({ data, loading = false }) => {
+const MapPage: React.FC<Props> = ({ map, loading = false }) => {
   const [isMapVisible, setMapVisible] = useState(false);
 
   if (loading)
     return <div className="text-center text-2xl font-bold">Loading...</div>;
 
-  const map = data.data;
   const numberOfSites = getSitesCount(map);
 
   return (
@@ -43,7 +40,7 @@ const MapPage: React.FC<Props> = ({ data, loading = false }) => {
           </h1>
           <Link
             href="#guides"
-            className="py-1 px-1 mb-2 font-bold border border-black rounded hover:bg-black hover:text-white"
+            className="py-1 px-1 mb-2 font-bold border border-valorant-line rounded hover:border-valorant-red hover:text-valorant-red transition"
           >
             {" "}
             Guides
@@ -53,7 +50,7 @@ const MapPage: React.FC<Props> = ({ data, loading = false }) => {
             width={900}
             height={100}
             alt={`${map.displayName}'s map layout`}
-            className="border rounded-2xl mb-5"
+            className="border border-valorant-line rounded-2xl mb-5"
           />
         </div>
         <div className="flex flex-col items-center justify-center">
@@ -61,13 +58,13 @@ const MapPage: React.FC<Props> = ({ data, loading = false }) => {
             <p className="text-center font-bold">
               {numberOfSites !== null && `Number of sites: ${numberOfSites}`}
             </p>
-            <p className="text-center italic">
+            <p className="text-center italic text-valorant-grey">
               &quot;{map.narrativeDescription}&quot;
             </p>
           </div>
           <div className="flex flex-col items-center py-3">
             <button
-              className="bg-slate-500 hover:bg-black text-white font-bold py-1 px-3 rounded mx-4"
+              className="bg-valorant-red hover:bg-valorant-red-dark text-white font-bold uppercase tracking-wide py-1 px-3 rounded mx-4 transition"
               onClick={() => setMapVisible(!isMapVisible)}
             >
               {isMapVisible ? "Hide Map" : "Show Map"}

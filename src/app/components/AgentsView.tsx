@@ -19,7 +19,6 @@ const AgentsView: React.FC<Props> = ({ data }) => {
 
   return (
     <>
-      <AgentsFilter setFilteredAgents={handleFilteredClick} />
       <AgentsList filteredAgents={filteredAgents} data={data} />
     </>
   );

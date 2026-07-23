@@ -7,16 +7,12 @@ import credits from "../../../public/Credits_icon.webp";
 
 type Props = {
   loading?: boolean;
-  data:{
-    data: Weapon;
-  };
+  weapon: Weapon;
 };
 
-const WeaponPage: React.FC<Props> = ({ data, loading = false }) => {
+const WeaponPage: React.FC<Props> = ({ weapon, loading = false }) => {
   if (loading)
     return <div className="text-center text-2xl font-bold">Loading...</div>;
-
-  const weapon = data.data;
 
   return (
     <>
@@ -34,11 +30,13 @@ const WeaponPage: React.FC<Props> = ({ data, loading = false }) => {
           />
         </div>
         <div className="flex flex-col items-center justify-center">
-          <div className="font-semibold uppercase underline">
-            Weapon Information
-          </div>
-          <div className="flex flex-row text-lg">
-            Cost:&nbsp;<Image src={credits} width={20} alt="Valorant Credits Icon" className="object-scale-down"/> &nbsp;{weapon.shopData.cost}
+          <div className="flex flex-col items-center gap-2 bg-valorant-panel border border-valorant-line rounded-2xl px-8 py-4">
+            <div className="font-semibold uppercase underline decoration-valorant-red">
+              Weapon Information
+            </div>
+            <div className="flex flex-row items-center text-lg">
+              Cost:&nbsp;<Image src={credits} width={20} alt="Valorant Credits Icon" className="object-scale-down"/> &nbsp;{weapon.shopData.cost}
+            </div>
           </div>
         </div>
       </div>

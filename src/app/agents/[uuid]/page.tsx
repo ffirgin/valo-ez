@@ -1,24 +1,14 @@
+import { notFound } from "next/navigation";
 import AgentPage from "../../components/AgentPage";
+import { getAgent } from "@/lib/valorant-api";
 
-type Props = {
-  params: {
-    uuid: string;
-  };
-};
-
-const getAgentData = async ({ uuid }: any) => {
-  const res = await fetch(`https://valorant-api.com/v1/agents/${uuid}`);
-  const data = await res.json();
-  return data;
-};
-
-export default async function Agent({ params }: { params: { slug: string } }) {
-  const { uuid }: any = params;
-  const data = await getAgentData({ uuid });
+export default async function Agent({ params }: { params: { uuid: string } }) {
+  const agent = await getAgent(params.uuid).catch(() => null);
+  if (!agent) notFound();
 
   return (
     <div>
-      <AgentPage data={data} />
+      <AgentPage agent={agent} />
     </div>
   );
 }

@@ -5,8 +5,9 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="flex flex-col h-screen items-center justify-center p-24 pt-1">
-      <div className="flex flex-col items-center cursor-default">
+    <main className="relative flex flex-col h-screen items-center justify-center p-24 pt-1 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-radial from-valorant-red/20 via-transparent to-transparent" />
+      <div className="relative flex flex-col items-center cursor-default">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -26,10 +27,10 @@ export default function Home() {
         >
           <h1
             id="title"
-            className="text-5xl font-extrabold uppercase text-center"
+            className="text-5xl font-extrabold uppercase text-center tracking-wide"
           >
             {" "}
-            Valorant, made EZ! 🤓{" "}
+            Valorant, made <span className="text-valorant-red">EZ!</span> 🤓{" "}
           </h1>
         </motion.div>
         <motion.div
@@ -49,18 +50,18 @@ export default function Home() {
             },
           }}
         >
-          <p className="pt-5 text-center">
+          <p className="pt-5 text-center text-valorant-grey">
             Use information straight from the Valorant game files to learn more
             about the agents, maps and weapons! Guides coming
             soon...
           </p>
           <div className="flex pt-3 items-center justify-center">
-            <button className="bg-slate-500 hover:bg-black text-white font-bold py-2 px-3 rounded mx-4">
+            <button className="bg-valorant-red hover:bg-valorant-red-dark text-white font-bold uppercase tracking-wide py-2 px-3 rounded mx-4 transition">
               Get Learning
             </button>
-            <a href="/about">
+            <a href="/about" className="hover:text-valorant-red transition">
               Learn more{" "}
-              <span className="hover:translate-x-1 ease-in-out duration-200">
+              <span className="inline-block hover:translate-x-1 ease-in-out duration-200">
                 →
               </span>
             </a>

@@ -11,7 +11,7 @@ const WeaponBox = ({ data }: any) => {
       href={{
         pathname: `/weapons/${data.uuid}`,
       }}
-      className="flex flex-col max-w-400px border-2 border-zinc-400 hover:border-black rounded-xl hover:bg-black hover:text-white transition hover:ease-in-out hover:duration-200 z-20 overflow-hidden"
+      className="flex flex-col max-w-[400px] bg-valorant-panel border border-valorant-line rounded-xl transition hover:border-valorant-red hover:shadow-[0_0_20px_rgba(255,70,85,0.35)] hover:ease-in-out hover:duration-200 z-20 overflow-hidden"
     >
       <Image
         src={data.displayIcon}
