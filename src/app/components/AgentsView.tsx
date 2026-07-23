@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import AgentsList from "./AgentsList";
-import AgentsFilter from "./AgentsFilter";
 
 import { Agent } from "../../types/Agents.type";
 
