@@ -8,7 +8,7 @@ export default function About() {
         About The Team
       </h1>
       <div className="text-center">
-        <h2>Griffin</h2>
+        <h2>More to come</h2>
         <div>
           {/* <Image 
             src={}

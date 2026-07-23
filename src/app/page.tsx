@@ -57,14 +57,8 @@ export default function Home() {
           </p>
           <div className="flex pt-3 items-center justify-center">
             <button className="bg-valorant-red hover:bg-valorant-red-dark text-white font-bold uppercase tracking-wide py-2 px-3 rounded mx-4 transition">
-              Get Learning
+              <a href="/agents">Get Learning</a>
             </button>
-            <a href="/about" className="hover:text-valorant-red transition">
-              Learn more{" "}
-              <span className="inline-block hover:translate-x-1 ease-in-out duration-200">
-                →
-              </span>
-            </a>
           </div>
         </motion.div>
       </div>
